@@ -40,15 +40,15 @@ public class RoomService {
 		return result;
 	}
 	
-	public List<Room> availableRooms(){
-		List<Room> result = new ArrayList<>();
-		for (Room room : roomRepository.findAll()) {
-			if (room.getAvailable() == 1) {
-				result.add(room);
-			}
-		}
-		return result;
-	}
+//	public List<Room> availableRooms(){
+//		List<Room> result = new ArrayList<>();
+//		for (Room room : roomRepository.findAll()) {
+//			if (room.getAvailable() == 1) {
+//				result.add(room);
+//			}
+//		}
+//		return result;
+//	}
 	
 	public Room save(Room room) {
 		return roomRepository.save(room);

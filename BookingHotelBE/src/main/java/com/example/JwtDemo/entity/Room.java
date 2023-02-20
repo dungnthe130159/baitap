@@ -26,13 +26,13 @@ public class Room {
 
     private String number;
     private double price;
-    private int available;
+    private String status;
     
-	public Room(Category category, String number, double price, int available) {
+	public Room(Category category, String number, double price, String status ) {
 		this.category = category;
 		this.number = number;
 		this.price = price;
-		this.available = available;
+		this.status  = status;
 	}
 	public Room() {
 		

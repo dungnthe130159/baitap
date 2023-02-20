@@ -25,4 +25,43 @@ public class Category {
 
     @Column(name = "category_room")
     private String categoryName;
+    
+    @Column(name = "price")
+    private String price;
+    
+    @Column(name = "bed")
+    private String bed;
+
+    @Column(name = "refrigerator")
+    private String refrigerator;
+    
+    @Column(name = "television")
+    private String television;
+    
+    @Column(name = "bathtub")
+    private String bathtub;
+    
+    @Column(name = "hairdryer")
+    private String hairdryer;
+    
+    @Column(name = "airConditioner")
+    private String airConditioner;
+    
+    @Column(name = "deskWork")
+    private String deskWork;
+    
+    @Column(name = "safe")
+    private String safe;
+    
+    @Column(name = "dressingTable")
+    private String dressingTable;
+    
+    @Column(name = "miniBar")
+    private String miniBar;
+    
+    @Column(name = "coffeeMaker")
+    private String coffeeMaker;
+    
+    @Column(name = "microwaveOven")
+    private String microwaveOven;
 }

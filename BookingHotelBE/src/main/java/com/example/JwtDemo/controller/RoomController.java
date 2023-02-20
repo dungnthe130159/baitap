@@ -44,10 +44,10 @@ public class RoomController {
 		return roomService.findByCategoryName(name);
 	}
 	
-	@GetMapping("/room/available")
-	private List<Room> getAvailableRooms() {
-		return roomService.availableRooms();
-	}
+//	@GetMapping("/room/available")
+//	private List<Room> getAvailableRooms() {
+//		return roomService.availableRooms();
+//	}
 	
 	@GetMapping("/room/{id}")
 	public ResponseEntity<Room> getRoomById(@PathVariable Long id){
