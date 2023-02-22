@@ -9,7 +9,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.JwtDemo.dto.UserDto;
 import com.example.JwtDemo.entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

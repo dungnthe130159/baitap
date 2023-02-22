@@ -1,5 +1,6 @@
 package com.example.JwtDemo.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,6 +52,8 @@ public class User {
 	
 	@Size(max = 120)
 	private String password;
+	
+	private Date birthDate;
 
 	@ManyToMany
 	@JoinTable(  name = "user_roles", 
@@ -58,16 +61,13 @@ public class User {
 	        inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
-	public User() {
-	
-	}
-
-	public User(String username, String email,String phone,String address,String password) {
+	public User(String username, String email,String phone,String address,Date birthDate,String password) {
 		this.username = username;
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
 		this.password = password;
+		this.birthDate = birthDate;
 	}
 
 

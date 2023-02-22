@@ -33,8 +33,8 @@ public class JournalService {
     	return bookingJournalRepository.findAll();
     }
     
-    public List<BookingJournal> findBookingUser(User user){
-    	return bookingJournalRepository.findByUser(user);
+    public List<BookingJournal> findBookingUser(int userID){
+    	return bookingJournalRepository.findByUser(userID);
     }
     
 	public BookingJournal save(BookingJournal book) {

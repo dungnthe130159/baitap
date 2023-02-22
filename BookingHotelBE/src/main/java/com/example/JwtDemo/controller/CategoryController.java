@@ -13,13 +13,13 @@ import com.example.JwtDemo.service.CategoryService;
 
 @RestController
 @CrossOrigin(origins = "*",maxAge = 3600)
-@RequestMapping("api/auth/signin")
+@RequestMapping("api")
 public class CategoryController {
 	@Autowired
 	private CategoryService categoryService;
 	
 //	@RequestMapping("/findallCategory")
-	@GetMapping("/findallCategory")
+	@GetMapping("/categories")
 	private List<Category> findCategory(){
 		return categoryService.getAllCategories();
 	}

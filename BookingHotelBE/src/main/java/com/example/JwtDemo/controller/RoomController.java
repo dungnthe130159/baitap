@@ -13,21 +13,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.JwtDemo.entity.Room;
-
-import com.example.JwtDemo.service.JournalService;
 import com.example.JwtDemo.service.RoomService;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("api/auth/signin")
+@RequestMapping("api")
 
 public class RoomController {
 	@Autowired
 	private RoomService roomService;
-	private JournalService journalService;
 	
 	@GetMapping("/findAllRooms")
 	private List<Room> findAllRoom(){

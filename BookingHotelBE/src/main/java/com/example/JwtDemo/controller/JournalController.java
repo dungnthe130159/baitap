@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.JwtDemo.entity.BookingJournal;
-import com.example.JwtDemo.entity.User;
 import com.example.JwtDemo.service.JournalService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("api/auth/signin")
+@RequestMapping("api")
 public class JournalController {
 	@Autowired 
 	private JournalService journalService;
@@ -31,8 +30,8 @@ public class JournalController {
 	
 //  @RequestMapping(value = "/findBookingUser/{userID}", method = RequestMethod.GET)
     @GetMapping("/findBookingUser/{userID}")
-	private List<BookingJournal> findBookingUser(@PathVariable("userID") User user){
-    	return journalService.findBookingUser(user);
+	private List<BookingJournal> findBookingUser(@PathVariable("userID") int userID){
+    	return journalService.findBookingUser(userID);
     }
     
     @PostMapping("/bookingRoom")
