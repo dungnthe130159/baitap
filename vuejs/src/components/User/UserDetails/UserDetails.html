@@ -1,0 +1,37 @@
+<template>
+    <div v-if="currentUser.id" class="container">
+        <h3>Update Form</h3>
+        <div style="padding-top: 20px;" class="d-flex flex-wrap">
+            <label for="first">ID User</label>
+            <div style="text-align: left;" id="first">{{ currentUser.id }}</div>
+        </div>
+
+        <div style="padding-top: 30px;" class="d-flex flex-wrap">
+            <label for="first">User Name</label>
+            <input type="text" id="username" v-model="currentUser.username" />
+        </div>
+
+        <div style="padding-top: 30px;" class="d-flex flex-wrap">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" v-model="currentUser.phone" />
+        </div>
+
+        <div style="padding-top: 30px;" class="d-flex flex-wrap">
+            <label for="last">Address</label>
+            <input type="text" id="address" v-model="currentUser.address" />
+        </div>
+
+        <div style="padding-top: 30px;" class="d-flex flex-wrap">
+            <label for="email">Email</label>
+            <input type="text" id="email" v-model="currentUser.email" />
+        </div>
+        <button class="delete" @click="deleteUser">
+            Delete
+        </button>
+
+        <button type="submit" class="update" @click="updateUser">
+            Update
+        </button>
+        <p style="margin-top: 5px;">{{ message }}</p>
+    </div>
+</template>

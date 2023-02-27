@@ -1,0 +1,33 @@
+<template>
+    <div class="containerBV">
+        <table style="margin:40px 0px 0px 40px;">
+            <div style="margin-top: 20px;">
+                <tr>
+                    <td>Id</td>
+                    <td>Room</td>
+                    <td>User Name</td>
+                    <td>Phone</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                    <td>Date From</td>
+                    <td>Date To</td>
+                    <td>Total Price</td>
+                </tr>
+                <tr v-for="booking in bookings" :key="booking.id">
+                    <td>{{ booking.id }}</td>
+                    <td style="width: 210px;">{{ booking.room.category.categoryName }}
+                        <br>Room Number : {{ booking.room.number }}
+                    </td>
+                    <td>{{ booking.user.username }}</td>
+                    <td>{{ booking.user.phone }}</td>
+                    <td>{{ booking.user.email }}</td>
+                    <td>{{ booking.user.address }}</td>
+                    <!-- <td>{{ booking.dateFrom | formatDate }}</td> -->
+                    <td>{{ booking.dateFrom }}</td>
+                    <td>{{ booking.dateTo }}</td>
+                    <td>{{ booking.totalPrice }}</td>
+                </tr>
+            </div>
+        </table>
+    </div>
+</template>

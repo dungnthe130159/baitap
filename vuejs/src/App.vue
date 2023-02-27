@@ -15,7 +15,7 @@
           <a href="/roomAvailable" class="nav-link">All Rooms</a>
         </li>
         <div v-if="login" class="d-flex flex-wrap">
-          <div  class="nav-item" style="margin-left: 1050px;">
+          <div class="nav-item" style="margin-left: 1050px;">
             <a href="/signin" class="nav-link">Login</a>
           </div>
         </div>
@@ -29,7 +29,7 @@
             <a href="/home" class="nav-link" v-on:click="LogOut">Log Out</a>
           </div>
         </div>
-        
+
       </div>
     </nav>
     <router-view></router-view>
@@ -50,22 +50,22 @@ export default class App extends Vue {
   login: boolean = true;
 
   CheckLogin() {
-    if(localStorage.getItem("username")===null){
-     console.log("true")
-     this.login = true
-    }else{
+    if (localStorage.getItem("username") === null) {
+      console.log("true")
+      this.login = true
+    } else {
       this.login = false
       console.log("false")
 
-    }   
+    }
   }
 
-  LogOut(){
+  LogOut() {
     localStorage.clear()
     this.login = true
   }
 
-  beforeUpdate(){
+  beforeUpdate() {
     this.CheckLogin();
   }
 }

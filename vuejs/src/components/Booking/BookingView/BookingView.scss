@@ -1,0 +1,57 @@
+.Vuejs input {
+    padding: 0.75em 0.5em;
+    font-size: 100%;
+    border: 1px solid #ccc;
+    widows: 120px;
+}
+
+.book-in1 {
+    margin-top: 20px;
+    width: 50%;
+}
+
+.book-in2 {
+    margin-top: 20px;
+    width: 50%;
+}
+
+.book-in3 {
+    margin-left: 450px;
+    padding: 10px;
+}
+
+label {
+    text-align: center;
+    background-color: azure;
+    width: 85%;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+input {
+    text-align: center;
+    background-color: azure;
+    width: 85%;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.container-book {
+    width: 65%;
+    height: 450px;
+    background-color: antiquewhite;
+    margin-top: 5px;
+    /* margin-left: 70px; */
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 20px;
+}
+

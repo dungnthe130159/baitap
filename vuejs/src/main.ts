@@ -24,9 +24,9 @@ Vue.use(VeeValidate);
 
 Vue.config.productionTip = false
 
-Vue.filter('formatDate',function(value : Date){
-  if(value){
-      return moment(value).format('MMMM Do YYYY')
+Vue.filter('formatDate', function (value: Date) {
+  if (value) {
+    return moment(value).format('MMMM Do YYYY')
   }
 })
 

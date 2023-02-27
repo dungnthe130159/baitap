@@ -1,43 +1,43 @@
 import http from "@/http-common";
 
-class BookingService{
-    findAllCategory(){
+class BookingService {
+    findAllCategory() {
         return http.get("api/auth/signin/findallCategory");
     }
 
-    findAllFeature(){
+    findAllFeature() {
         return http.get("/api/auth/signin/findallFeatures");
     }
 
-    findAllBooking(){
+    findAllBooking() {
         return http.get("/api/auth/signin/booking");
     }
 
-    findBookingUser(userID : string){
+    findBookingUser(userID: string) {
         return http.get(`/api/auth/signin/findBookingUser/${userID}`);
     }
 
-    findAllRooms(){
+    findAllRooms() {
         return http.get("/api/auth/signin/findAllRooms");
     }
 
-    findCategoryByName(name : string){
+    findCategoryByName(name: string) {
         return http.get(`/api/auth/signin/find/category/${name}`);
     }
 
-    findAvailableRooms(){
+    findAvailableRooms() {
         return http.get("/api/auth/signin/room/available");
     }
 
-    bookingRoom(data : any){
+    bookingRoom(data: any) {
         return http.post(`/api/auth/signin/room/book/${data}`);
     }
 
-    booking(data : any){
-        return http.post("/api/auth/signin/bookingRoom",data); 
+    booking(data: any) {
+        return http.post("/api/auth/signin/bookingRoom", data);
     }
 
-    findRoomByID(id : number){
+    findRoomByID(id: number) {
         return http.get(`/api/auth/signin/room/${id}`);
     }
 }

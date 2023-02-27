@@ -1,0 +1,142 @@
+<template>
+    <div>
+        <div class="welcome">
+            <p>All Number Room Avaiable</p>
+        </div>
+        <div class="container-avaiable">
+            <div>
+                <h5>Select your Room Type</h5>
+                <select style="margin-bottom: 10px;" class="list" v-model="nameFind" @change="searchName(nameFind)">
+                    <option defaults value="all">All Rooms</option>
+                    <option value="KINGROOM">King Room</option>
+                    <option value="LUXURYROOM">Luxury Room</option>
+                    <option value="NORMALROOM">Normal Room</option>
+                </select>
+
+                <div v-if="nameFind === 'all'" style="margin-left: 120px;" class="d-flex flex-wrap">
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in rooms "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div v-if="room.category.id === 1">
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 4 Adults</div>
+                            <div class="p">Total Bed : 5 Beds</div>
+                        </div>
+                    </div>
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in rooms "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div v-if="room.category.id === 2">
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1499914485622-a88fac536970?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 3 Adults</div>
+                            <div class="p">Total Bed : 2 Beds</div>
+                        </div>
+                    </div>
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in rooms "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div v-if="room.category.id === 3">
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 2 Adults</div>
+                            <div class="p">Total Bed : 1 Beds</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div v-if="nameFind === 'KINGROOM'" style="margin-left: 120px;" class="d-flex flex-wrap">
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in categories "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div>
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 4 Adults</div>
+                            <div class="p">Total Bed : 5 Beds</div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="nameFind === 'LUXURYROOM'" style="margin-left: 120px;" class="d-flex flex-wrap">
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in categories "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div>
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1499914485622-a88fac536970?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 3 Adults</div>
+                            <div class="p">Total Bed : 2 Beds</div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="nameFind === 'NORMALROOM'" style="margin-left: 120px;" class="d-flex flex-wrap">
+                    <div class="room" :class="{ active: index == currentIndex }" v-for="(room, index) in categories "
+                        :key="index" @click="setActiveRoom(room, index)">
+                        <div>
+                            <img class="img-table"
+                                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80">
+                            <div>
+                                <p>Room Number : {{ room.number }}</p>
+                            </div>
+                            <div>
+                                <p>Category Room : {{ room.category.categoryName }}</p>
+                            </div>
+                            <div class="p">Max Adults : 2 Adults</div>
+                            <div class="p">Total Bed : 1 Beds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-detail" v-if="currentRoom.id">
+
+            <h4>Room Detail</h4><br>
+            <table class="table-room-detail">
+                <tr>
+                    <td><label><strong>Category Room</strong></label></td>
+                    <td><label><strong>Number Room</strong></label></td>
+                    <td><label><strong>Price Room</strong></label></td>
+                    <td><label><strong>Price Room</strong></label></td>
+                </tr>
+                <tr>
+                    <td>{{ currentRoom.category.categoryName }}</td>
+                    <td>{{ currentRoom.number }}</td>
+                    <td>{{ currentRoom.price }}</td>
+                    <td>
+                        <label>Available </label>
+                        <a class="m-1 btn btn-sm btn-warning" :href="'/bookRoom/'">
+                            BookRoom
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>

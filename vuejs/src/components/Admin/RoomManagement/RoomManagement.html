@@ -1,0 +1,35 @@
+<template>
+    <div class="container-rm">
+        <h4 style="padding: 20px; text-align: left; font-weight: bolder;">All Room Report</h4>
+        <div class="contain">
+            <div class="add-nr">
+                <button class="new-room"><a style="all: unset;" href="/addRoom">
+                        Add New Room
+                    </a></button>
+            </div>
+            <table class="table-nr">
+                <tr style="padding-bottom: 10px; font-weight: bolder;">
+                    <td>ID</td>
+                    <td>Number Room</td>
+                    <td>Price</td>
+                    <td>Room Type</td>
+                    <td>Action</td>
+                </tr>
+                <tr class="tr-nr" v-for="room in rooms" :key="room.id">
+                    <td>{{ room.id }}</td>
+                    <td>{{ room.number }}</td>
+                    <td>{{ room.price }}</td>
+                    <td>{{ room.category.categoryName }}</td>
+                    <td v-if="room.available === 1">
+                        <button
+                            style="border-radius: 5px;padding: 5px; background-color: antiquewhite; color: green; margin: 10px 0px 10px 0px; font-size: large;">
+                            <a style="all:unset; border: 2px;" href="/bookRoom">BookRoom</a></button>
+                    </td>
+                    <td v-else style="color: red; font-size: large;">
+                        Unavaialbe
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>

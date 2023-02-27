@@ -3,10 +3,10 @@ import Room from "./Room";
 import User from "./User";
 
 export default interface BookRoom {
-    room : Room;
-    user : User;
-    features : Feature[];
-    year : number;
-    month : number;
-    dayOfMonth : number
+    room: Room;
+    user: User;
+    features: Feature[];
+    year: number;
+    month: number;
+    dayOfMonth: number
 }

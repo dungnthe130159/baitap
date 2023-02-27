@@ -1,0 +1,33 @@
+<template>
+    <div>
+            <div class="Vuejs">
+                    <h1 style="margin-top: 20px;"> Book Room</h1><br>
+
+            </div>
+            <div class="container-book d-flex flex-wrap">
+                    <div class="book-in1">
+                            <label for="room">User name</label><br>
+                            <label for="user">Room ID</label><br>
+                            <label for="feature">From Date</label><br>
+                            <label for="year">To Date</label><br>
+                            <label for="year">Total Price</label><br>
+                    </div>
+                    <div class="book-in2">
+                            <input type="text" placeholder="Enter Your Username" v-model="booking.user.username"
+                                    required /><br>
+                            <input type="text" placeholder="Enter RoomID" v-model="booking.room.id" required
+                                    v-on:change="totalPrice" /><br>
+                            <input type="date" placeholder="dd/mm/yyyy" v-model="booking.dateFrom" required
+                                    v-on:change="totalPrice" /><br>
+                            <input type="date" placeholder="dd/mm/yyyy" v-model="booking.dateTo" required
+                                    v-on:change="totalPrice" /><br>
+                            <label style="color: red;">{{ booking.totalPrice }}$</label>
+                    </div>
+                    <div class="book-in3">
+                            <button style="width: 80px; background-color: azure;padding: 7px;border-radius: 5px;"
+                                    v-on:click="saveBooking">Book</button>
+                    </div>
+            </div>
+
+    </div>
+</template>

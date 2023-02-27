@@ -1,0 +1,64 @@
+<template>
+    <div class="container">
+        <div class="search d-flex flex-wrap">
+            <input type="text" class="inputS" placeholder="Search by name" v-model="nameFind" />
+            <button style="margin-left: 35px; border-radius: 5px; width: 110px;" type="button" v-on:click="searchName">
+                Search
+            </button>
+        </div>
+        <div class="view d-flex flex-wrap">
+            <div class="view-list">
+                <h4 style="font-weight: bolder;">Users List</h4><br>
+                <table>
+                    <!-- <li class="list-group-item" :class="{ active: index == currentIndex }"
+                        v-for="(user, index) in users" :key="index" @click="setActiveUser(user, index)">
+                        {{ user.username }}
+                    </li> -->
+                    <tr style="font-weight: bolder;">
+                        <td>Id</td>
+                        <td>Username</td>
+                        <td>Address</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                    </tr>
+                    <tr v-for="user in users" :key="user.id" v-on:click="setActiveUser(user, user.id)">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="view-detail">
+                <div style="width: 250px; margin-left: 30px;" v-if="currentUser.id">
+                    <h4 style="font-weight: bolder;">User Detial</h4><br>
+                    <div>
+                        <label>User Name : </label>
+                        {{ currentUser.username }}
+                    </div>
+                    <div>
+                        <label>Email : </label>
+                        {{ currentUser.email }}
+                    </div>
+                    <div>
+                        <label>Phone Number : </label>
+                        {{ currentUser.phone }}
+                    </div>
+                    <div>
+                        <label>Address : </label>
+                        {{ currentUser.address }}
+                    </div>
+                    <a class="m-1 btn btn-sm btn-warning" :href="'/users/' + currentUser.id">
+                        Edit
+                    </a>
+                </div>
+                <div v-else>
+                    <br />
+                    <p>Please click details Users...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,46 @@
+<template>
+    <div class="body">
+        <!-- <div v-if="!submitted"> -->
+        <div class="container">
+            <h1>Register</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="email"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" v-model="user.username" name="username" id="username"
+                required>
+
+            <label for="email"><b>Phone</b></label>
+            <input type="text" placeholder="Enter Your Phone" v-model="user.phone" name="phone" id="phone" required>
+
+            <label for="email"><b>Address</b></label>
+            <input type="text" placeholder="Enter Your Address" v-model="user.address" name="address" id="address"
+                required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" v-model="user.email" name="email" id="email" required>
+
+            <!-- <label for="psw"><b>Role</b></label>
+            <input type="text" placeholder="Enter Role" v-model="user.role" name="role" id="role" required> -->
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" v-model="user.password" name="psw" id="psw" required>
+
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" v-model="pswRepeat" name="psw-repeat" id="psw-repeat"
+                required>
+            <hr>
+            <button v-on:click="saveUser" class="registerbtn">Register</button>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="/api/auth/signin">Sign in</a>.</p>
+        </div>
+    </div>
+
+    <!-- <div v-else>
+        <h4>You submitted successfully</h4>
+              <button class="btn btn-success" @click="newUser">Add</button>
+              <a class="btn btn-success" href="/">Home</a>
+      </div>
+    </div> -->
+</template>

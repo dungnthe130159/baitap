@@ -1,4 +1,4 @@
-export default interface Feature{
+export default interface Feature {
     id: number,
     name: string,
     price: number

@@ -15,84 +15,84 @@ const routes: Array<RouteConfig> = [
     component: () => import('../components/User/UserDetails.vue')
   },
   {
-    path:'/add',
-    name:'add',
-    component:() => import('../components/User/AddUser.vue')
+    path: '/add',
+    name: 'add',
+    component: () => import('../components/User/AddUser.vue')
   },
   {
-    path:'/signin',
-    name:'signin',
-    component:() => import('../components/Auth/Login.vue')
+    path: '/signin',
+    name: 'signin',
+    component: () => import('../components/Auth/Login.vue')
   },
   {
-    path:'/register',
-    name:'register',
-    component:() => import('../components/Auth/Register.vue')
+    path: '/register',
+    name: 'register',
+    component: () => import('../components/Auth/Register.vue')
   },
   {
-    path:'/adminView',
-    name : 'adminView',
-    component:() => import('../components/AdminView.vue')
+    path: '/adminView',
+    name: 'adminView',
+    component: () => import('../components/AdminView.vue')
   },
   {
-    path:'/categories',
-    name : 'category',
-    component:() => import('../components/Booking/CategoryView.vue')
+    path: '/categories',
+    name: 'category',
+    component: () => import('../components/Booking/CategoryView.vue')
   },
   {
-    path:'/features',
-    name:'feature',
-    component:() => import('../components/Booking/FeaturesView.vue')
+    path: '/features',
+    name: 'feature',
+    component: () => import('../components/Booking/FeaturesView.vue')
   },
   {
-    path:'/roomAvailable',
-    name:'available',
-    component:() => import('../components/Booking/RoomAvailable.vue')
+    path: '/roomAvailable',
+    name: 'available',
+    component: () => import('../components/Booking/RoomAvailable.vue')
   },
   {
-    path:'/bookRoom',
-    name:'bookroom',
-    component:() => import('../components/Booking/BookRoom.vue')
-  },
-  { 
-    path:'/bookingView',
-    name:'booking',
-    component:() => import('../components/Booking/BookingView.vue')
+    path: '/bookRoom',
+    name: 'bookroom',
+    component: () => import('../components/Booking/BookRoom.vue')
   },
   {
-    path:'/usersView',
-    name : 'usersView',
-    component:() => import('../components/UserView.vue')
+    path: '/bookingView',
+    name: 'booking',
+    component: () => import('../components/Booking/BookingView.vue')
   },
   {
-    path:'/',
-    name:'home',
-    component:() => import('../components/Home.vue')
+    path: '/usersView',
+    name: 'usersView',
+    component: () => import('../components/UserView.vue')
   },
   {
-    path:'/home',
-    name:'home',
-    component:() => import('../components/Home.vue')
+    path: '/',
+    name: 'home',
+    component: () => import('../components/Home.vue')
   },
   {
-    path:'/roomManagement',
-    name:'roomManagement',
-    component:() => import('../components/Admin/RoomManagement.vue')
+    path: '/home',
+    name: 'home',
+    component: () => import('../components/Home.vue')
   },
   {
-    path:'/addRoom',
-    name:'addRoom',
-    component:() => import('../components/Admin/AddRoom.vue')
+    path: '/roomManagement',
+    name: 'roomManagement',
+    component: () => import('../components/Admin/RoomManagement.vue')
   },
   {
-    path:'/component',
-    name:'component',
-    component:() => import('../components/Component.vue')
+    path: '/addRoom',
+    name: 'addRoom',
+    component: () => import('../components/Admin/AddRoom.vue')
   },
   {
-    path:'/profile',
-    name:'profile',
-    component:() => import('../components/Profile.vue')
+    path: '/component',
+    name: 'component',
+    component: () => import('../components/Component.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../components/Profile.vue')
   }
 
 ]
